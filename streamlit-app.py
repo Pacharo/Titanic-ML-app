@@ -1,3 +1,8 @@
+###
+# Code originally written by Harry Wang (https://github.com/harrywang/mini-ml/)
+# It was modified for the purpose of teaching how to deploy a machine learning 
+# model using Streamlit.
+###
 
 import streamlit as st  # type: ignore
 import pandas as pd
@@ -18,7 +23,7 @@ st.title('Titanic Survival Prediction')
 
 st.markdown('**Please provide passenger information:**')
 
-# --- FORM UI ---
+# --- Form UI ---
 with st.sidebar.form("titanic_form"):
     sex = st.selectbox('Sex', ['female', 'male'])
     
@@ -83,7 +88,7 @@ if submitted:
         if hasattr(tree_clf, "classes_"):
             survived_idx = list(tree_clf.classes_).index(1)
         else:
-            # Fallback: conventionally the positive class is at index 1
+            # Fallback: conventionally, the positive class is at index 1
             survived_idx = 1
 
         survival_prob = proba[0][survived_idx]
@@ -93,7 +98,7 @@ if submitted:
         # If the model doesn't support predict_proba or another issue occurs
         st.info("This model does not provide probability estimates.")
 
-# Explaination of the code:
+# Explanation of the code:
 
 st.markdown("""
     ---

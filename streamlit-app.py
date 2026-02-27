@@ -17,9 +17,9 @@ tree_clf = joblib.load('model_dt.pickle')
 st.title('Titanic Survival Prediction')
 
 # --- Data preview ---
-# with st.expander('Show sample of Titanic data'):
-#     df = pd.read_csv('titanic.csv')   
-#     st.dataframe(df.head(20))
+with st.expander('Show sample of Titanic data'):
+    df = pd.read_csv('titanic.csv')   
+    st.dataframe(df.head(20))
 
 st.markdown('**Please provide passenger information:**')
 
